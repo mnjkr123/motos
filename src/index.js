@@ -32,6 +32,8 @@ root.render(
     {/* <App /> */}
     <Routes>
       <Route path="/" element={<Marketing />} />
+      <Route path="/marketing" element={<Marketing />} />
+
       <Route path="/agency" element={<Agency />} />
       <Route path="/portfolio" element={<Portfolio />} />
       <Route path="/personal" element={<Personal />} />

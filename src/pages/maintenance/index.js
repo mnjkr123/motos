@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-
+import React, { useState, useEffect } from 'react';
 import BackgroundImage from '../../assets/images/bg/maintenance.jpg';
 import Icon from '../../assets/images/logo-icon-64.png';
 import { Link } from 'react-router-dom';
@@ -7,45 +6,34 @@ import { Link } from 'react-router-dom';
 /**
  * Maintenance component
  */
-class Maintenance extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            minutes: 59,
-            seconds: 0,
-        };
-    }
+export default function Maintenance() {
 
-    componentDidMount() {
-        this.myInterval = setInterval(() => {
-            const { seconds, minutes } = this.state
+        const [minutes, setMinutes] = useState(59);
+        const [seconds, setSeconds] = useState(0);
 
-            if (seconds > 0) {
-                this.setState(({ seconds }) => ({
-                    seconds: seconds - 1
-                }))
-            }
-            if (seconds === 0) {
-                if (minutes === 0) {
-                    clearInterval(this.myInterval)
-                } else {
-                    this.setState(({ minutes }) => ({
-                        minutes: minutes - 1,
-                        seconds: 59
-                    }))
+        useEffect(() => {
+            const myInterval = setInterval(() => {
+                if (seconds > 0) {
+                    setSeconds((prevSeconds) => prevSeconds - 1);
                 }
-            }
-        }, 1000);
-    }
+                if (seconds === 0) {
+                    if (minutes === 0) {
+                        clearInterval(myInterval);
+                    } else {
+                        setMinutes((prevMinutes) => prevMinutes - 1);
+                        setSeconds(59);
+                    }
+                }
+            }, 1000);
 
-    componentWillUnmount() {
-        clearInterval(this.myInterval)
-    }
+            return () => {
+                clearInterval(myInterval);
+            };
+        }, [minutes, seconds]);
 
-    render() {
-        const { minutes, seconds } = this.state
         return (
-            <React.Fragment>
+            <>
+
                 <section className="position-relative" style={{ background: `url(${BackgroundImage})` }}>
                     <div className="bg-overlay"></div>
                     <div className="container-fluid">
@@ -72,9 +60,7 @@ class Maintenance extends Component {
                         </div>
                     </div>
                 </section>
-            </React.Fragment>
+            </>
         )
-    }
-}
-
-export default Maintenance;
+ 
+};

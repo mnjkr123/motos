@@ -1,43 +1,37 @@
-import React, { Component } from "react";
-import { Col, Container, Card, Row } from "reactstrap";
+import React, { useState, useEffect } from 'react';
+import { Col, Container, Card, Row } from 'reactstrap';
 import { Link } from "react-router-dom";
-import { Link as Link2  } from 'react-scroll';
+import { Link as Link2 } from 'react-scroll';
 import * as Icon from 'react-feather';
-
 import Logo from "../assets/images/logo-icon-32.png";
 
-class Footer extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            arrow: false
-        }
-        this.handleScroll = this.handleScroll.bind(this)
-    }
+export default function Footer() {
 
-    handleScroll() {
-        if (
-            document.body.scrollTop >= 500 ||
-            document.documentElement.scrollTop >= 500
-        ) {
-            this.setState({
-                arrow: true
-            });
+        const [arrow, setArrow] = useState(false);
 
-        } else {
-            this.setState({
-                arrow: false
-            });
-        }
-    }
-    componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll);
-    }
-    render() {
+        const handleScroll = () => {
+            if (
+                document.body.scrollTop >= 500 ||
+                document.documentElement.scrollTop >= 500
+            ) {
+                setArrow(true);
+            } else {
+                setArrow(false);
+            }
+        };
+        useEffect(() => {
+            window.addEventListener('scroll', handleScroll);
+
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            };
+        }, []);
+
+
         return (
-            <React.Fragment>
+            <>
                 {/* Back to top */}
-                <Link2 to="home" style={{ display: this.state.arrow === true ? 'block' : 'none' }} id="back-to-top" className="back-to-top rounded-pill fs-5"><Icon.ArrowUp className="fea icon-sm icons align-middle" /></Link2>
+                <Link2 to="home" style={{ display: arrow === true ? 'block' : 'none' }} id="back-to-top" className="back-to-top rounded-pill fs-5"><Icon.ArrowUp className="fea icon-sm icons align-middle" /></Link2>
                 {/* Back to top  */}
 
                 {/* Footer Start  */}
@@ -122,9 +116,7 @@ class Footer extends Component {
                     </div>
                 </footer>
                 {/* Footer End  */}
-            </React.Fragment>
+            </>
         )
-    }
-}
-
-export default Footer;
+    
+};

@@ -20,16 +20,15 @@ import LogoIcon from '../../assets/images/logo-icon-48.png';
 
 import Laptop from '../../assets/images/bg/laptop.png';
 
-class Saas extends Component {
-    constructor(props) {
-        super(props);
+export default function Saas() {
 
-        window.addEventListener("scroll", this.windowScroll);
-    }
+
+    window.addEventListener("scroll", windowScroll);
+
     /**
      * Window scroll 
      */
-    windowScroll() {
+    function windowScroll() {
         const navbar = document.getElementById("navbar");
         if (
             document.body.scrollTop >= 50 ||
@@ -39,84 +38,81 @@ class Saas extends Component {
         } else {
             navbar.classList.remove("nav-sticky");
         }
-    }
+    };
 
-    render() {
-        return (
-            <React.Fragment>
-                <div>
 
-                    <Navbar />
-                    {/* Hero Start  */}
-                    <section className="bg-half-170 d-table w-100 overflow-hidden bg-soft-primary" id="home">
-                        <Container>
-                            <Row className="align-items-center">
-                                <Col lg={6} md={6}>
-                                    <div className="title-heading">
-                                        <img src={LogoIcon} alt="" />
-                                        <h1 className="heading my-3">Make everything <br /> organize with Motos</h1>
-                                        <p className="para-desc text-muted">Launch your campaign and benefit from our expertise on designing and managing conversion centered bootstrap v5 html page.</p>
-                                        <div className="mt-4 pt-2">
-                                            <Link to="#" className="btn btn-primary">Buy Now</Link>
-                                        </div>
+    return (
+        <>
+            <div>
+
+                <Navbar />
+                {/* Hero Start  */}
+                <section className="bg-half-170 d-table w-100 overflow-hidden bg-soft-primary" id="home">
+                    <Container>
+                        <Row className="align-items-center">
+                            <Col lg={6} md={6}>
+                                <div className="title-heading">
+                                    <img src={LogoIcon} alt="" />
+                                    <h1 className="heading my-3">Make everything <br /> organize with Motos</h1>
+                                    <p className="para-desc text-muted">Launch your campaign and benefit from our expertise on designing and managing conversion centered bootstrap v5 html page.</p>
+                                    <div className="mt-4 pt-2">
+                                        <Link to="#" className="btn btn-primary">Buy Now</Link>
                                     </div>
-                                </Col>
-
-                                <Col lg={6} md={6} className="mt-4 pt-2 mt-sm-0 pt-sm-0">
-                                    <div className="img-fluid-responsive position-relative">
-                                        <img src={Laptop} className="mx-auto d-block" alt="" />
-                                    </div>
-                                </Col>
-                            </Row>
-                        </Container>
-                    </section>
-                    {/* Hero End  */}
-
-                    {/* Partners start */}
-
-                    <section className="mt-5 pt-md-5">
-                        <Container>
-                            <Row className="justify-content-center">
-                                <div className="col-lg-2 col-md-2 col-6 text-center py-4 py-sm-0">
-                                    <img src={AmazonImage} className="avatar avatar-ex-sm" alt="" />
                                 </div>
+                            </Col>
 
-                                <div className="col-lg-2 col-md-2 col-6 text-center py-4 py-sm-0">
-                                    <img src={GoogleImage} className="avatar avatar-ex-sm" alt="" />
+                            <Col lg={6} md={6} className="mt-4 pt-2 mt-sm-0 pt-sm-0">
+                                <div className="img-fluid-responsive position-relative">
+                                    <img src={Laptop} className="mx-auto d-block" alt="" />
                                 </div>
+                            </Col>
+                        </Row>
+                    </Container>
+                </section>
+                {/* Hero End  */}
 
-                                <div className="col-lg-2 col-md-2 col-6 text-center py-4 py-sm-0">
-                                    <img src={LenovoImage} className="avatar avatar-ex-sm" alt="" />
-                                </div>
+                {/* Partners start */}
 
-                                <div className="col-lg-2 col-md-2 col-6 text-center py-4 py-sm-0">
-                                    <img src={PaypalImage} className="avatar avatar-ex-sm" alt="" />
-                                </div>
+                <section className="mt-5 pt-md-5">
+                    <Container>
+                        <Row className="justify-content-center">
+                            <div className="col-lg-2 col-md-2 col-6 text-center py-4 py-sm-0">
+                                <img src={AmazonImage} className="avatar avatar-ex-sm" alt="" />
+                            </div>
 
-                                <div className="col-lg-2 col-md-2 col-6 text-center py-4 py-sm-0">
-                                    <img src={ShopifyImage} className="avatar avatar-ex-sm" alt="" />
-                                </div>
+                            <div className="col-lg-2 col-md-2 col-6 text-center py-4 py-sm-0">
+                                <img src={GoogleImage} className="avatar avatar-ex-sm" alt="" />
+                            </div>
 
-                                <div className="col-lg-2 col-md-2 col-6 text-center py-4 py-sm-0">
-                                    <img src={SpotifyImage} className="avatar avatar-ex-sm" alt="" />
-                                </div>
-                            </Row>
-                        </Container>
-                    </section>
-                    {/* Partners End  */}
+                            <div className="col-lg-2 col-md-2 col-6 text-center py-4 py-sm-0">
+                                <img src={LenovoImage} className="avatar avatar-ex-sm" alt="" />
+                            </div>
 
-                    <Feature />
+                            <div className="col-lg-2 col-md-2 col-6 text-center py-4 py-sm-0">
+                                <img src={PaypalImage} className="avatar avatar-ex-sm" alt="" />
+                            </div>
 
-                    {/* Pricing  */}
-                    <Pricing />
-                    <Review />
-                    <News />
-                    <Contact />
-                    <Footer />
-                </div>
-            </React.Fragment>
-        )
-    }
-}
+                            <div className="col-lg-2 col-md-2 col-6 text-center py-4 py-sm-0">
+                                <img src={ShopifyImage} className="avatar avatar-ex-sm" alt="" />
+                            </div>
 
-export default Saas;
+                            <div className="col-lg-2 col-md-2 col-6 text-center py-4 py-sm-0">
+                                <img src={SpotifyImage} className="avatar avatar-ex-sm" alt="" />
+                            </div>
+                        </Row>
+                    </Container>
+                </section>
+                {/* Partners End  */}
+
+                <Feature />
+
+                {/* Pricing  */}
+                <Pricing />
+                <Review />
+                <News />
+                <Contact />
+                <Footer />
+            </div>
+        </>
+    )
+};
