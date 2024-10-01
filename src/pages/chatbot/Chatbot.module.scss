@@ -1,0 +1,90 @@
+.chatbot-section {
+  background-color: #f7f8fa;
+  padding: 2rem 0;
+}
+
+.chatbotCard {
+  border-radius: 10px;
+  border: 1px solid #a74545;
+  max-width: 1000px; // Set a maximum width for larger screens
+  max-height: 1000px; // Set a maximum width for larger screens
+  background-color: #476079 !important;
+  color: white; // Ensures text is visible
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+
+.chatbotHeader {
+  background-color: #8e34e2 !important;
+  color: #0f0101;
+  padding: 1rem;
+  text-align: center;
+}
+
+h4.text-white {
+  color: #3f0c0c; /* Ensures that the header text is white */
+}
+
+.messages {
+  max-height: 1400px;
+  overflow-y: auto; /* Allows scrolling if content exceeds max height */
+  padding: 1rem;
+  color: #0f0101;
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 1rem;
+  border-radius: 8px; /* Add border radius for a softer look */
+}
+
+.message {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  color: #0f0101;
+  border-radius: 8px;
+  width: 100%; /* Ensures the message takes full width */
+  word-wrap: break-word; /* Handles long words without breaking layout */
+  white-space: pre-wrap; /* Preserves whitespace and line breaks */
+  line-height: 1.5; /* Better spacing between lines */
+  font-size: 16px; /* Adjust for readability */
+}
+
+.message.user {
+  background-color: #d1ecf1;
+  text-align: right;
+}
+
+.message.bot {
+  background-color: #e2e3e5;
+  text-align: left;
+}
+.user-input-form {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+}
+
+.user-input-form input {
+  flex: 1; // Allow the input field to take available space
+  margin-right: 10px; // Add some space between the input and the button
+  padding: 10px; // Adjust padding for a better appearance
+  font-size: 16px; // Increase font size for better readability
+}
+
+.send-btn {
+  display: flex;
+  background-color: #004085;
+  border: none;
+  text-align: center;
+  &:hover {
+    background-color: #003366;
+  }
+}
+
+.chatbot-section ul {
+  padding-left: 20px; // Add padding to the left for the bullet points
+}
+
+.chatbot-section li {
+  margin-bottom: 10px; // Add space between each bullet point
+}

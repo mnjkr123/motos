@@ -68,6 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-"# motos" 
-"# motos" 
-"# motos" 
+"# motos"
+"# motos"
+"# motos"
+
+npm install react-bootstrap
+npm install bootstrap
+npm install --save-dev @types/react-bootstrap
+npm install @popperjs/core
+npm install dotenv
+npm install path-browserify os-browserify crypto-browserify
